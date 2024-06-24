@@ -15,4 +15,4 @@ RUN ./gradlew build
 
 COPY build/libs/GompeisHelper-1.0-all.jar /app/GompeisHelper-1.0-all.jar
 
-CMD ["java", "-jar", "/app/GompeisHelper-1.0-all.jar"]
+CMD ["java", "-cp", "/app/GompeisHelper-1.0-all.jar", "com.greenbueller.GompeiHelper.GompeiHelper"]

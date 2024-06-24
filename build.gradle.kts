@@ -3,7 +3,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
-application.mainClass = "com.greenbueller.GompeiHelper.GompeiHelper" //
+application.mainClass = "com.greenbueller.GompeiHelper.GompeiHelper"
 
 
 group = "org.greenbueller"
@@ -38,10 +38,6 @@ tasks.withType<JavaCompile> {
     // Set this to the version of java you want to use,
     // the minimum required for JDA is 1.8
     sourceCompatibility = "1.8"
-}
-
-application {
-    mainClass.set("com.greenbueller.GompeiHelper.GompeiHelper")
 }
 
 tasks.jar {
