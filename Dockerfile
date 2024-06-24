@@ -6,7 +6,7 @@ COPY build.gradle.kts /app/
 COPY gradlew /app/
 COPY gradle /app/gradle
 
-RUN ./gradlew build || return 0
+RUN chmod +x /app/gradlew
 
 COPY src /app/src
 COPY src /app/config
