@@ -39,3 +39,14 @@ tasks.withType<JavaCompile> {
     // the minimum required for JDA is 1.8
     sourceCompatibility = "1.8"
 }
+
+application {
+    mainClass.set("com.greenbueller.GompeiHelper.GompeiHelper")
+}
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = application.mainClass.get()
+    }
+    archiveFileName.set("GompeisHelper-1.0-all.jar")
+}
