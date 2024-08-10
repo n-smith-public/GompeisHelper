@@ -108,7 +108,7 @@ public class GompeiHelper {
     public static void playStartupSound() {
         Clip clip = null;
         try {
-            File audioFile = new File("C:/Users/penny/OneDrive/Documents/Discord/GompeisHelper/config/Startup.wav");
+            File audioFile = new File("config/Startup.wav");
             //System.out.println("Loading audio file: " + audioFile.getAbsolutePath());
 
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(audioFile);

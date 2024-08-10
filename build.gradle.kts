@@ -3,15 +3,15 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
-application.mainClass = "com.greenbueller.GompeiHelper.GompeiHelper"
+application {
+    mainClass.set("com.greenbueller.GompeiHelper.GompeiHelper")
+}
 
 
 group = "org.greenbueller"
 version = "1.0"
 
-val jdaVersion = "5.0.0-beta.21" //
-
-
+val jdaVersion = "5.0.0-beta.21"
 
 repositories {
     mavenCentral()
@@ -24,19 +24,15 @@ dependencies {
     implementation("org.openjfx:javafx-media:22.0.1")
 }
 
-
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.isIncremental = true
-
-    // Set this to the version of java you want to use,
-    // the minimum required for JDA is 1.8
     sourceCompatibility = "1.8"
 }
 
