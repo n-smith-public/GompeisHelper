@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass.set("com.greenbueller.GompeiHelper.GompeiHelper")
+    mainClass.set("com.greenbueller.DenBot.DenBot")
 }
 
 
@@ -40,5 +40,5 @@ tasks.jar {
     manifest {
         attributes["Main-Class"] = application.mainClass.get()
     }
-    archiveFileName.set("GompeisHelper-1.0-all.jar")
+    archiveFileName.set("DenBot-1.0-all.jar")
 }
