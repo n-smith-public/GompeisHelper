@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass.set("com.greenbueller.GompeiHelper.GompeiHelper")
+    mainClass.set("com.greenbueller.DenBot.DenBot")
 }
 
 
@@ -22,6 +22,7 @@ dependencies {
     implementation("io.github.cdimascio:dotenv-java:3.0.0")
     implementation("org.openjfx:javafx-controls:22.0.1")
     implementation("org.openjfx:javafx-media:22.0.1")
+    implementation("com.oracle.database.jdbc:ojdbc8:19.9.0.0")
 }
 
 java {
@@ -40,5 +41,5 @@ tasks.jar {
     manifest {
         attributes["Main-Class"] = application.mainClass.get()
     }
-    archiveFileName.set("GompeisHelper-1.0-all.jar")
+    archiveFileName.set("DenBot-1.0-all.jar")
 }
