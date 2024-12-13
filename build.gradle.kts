@@ -20,9 +20,8 @@ repositories {
 dependencies {
     implementation("net.dv8tion:JDA:$jdaVersion")
     implementation("io.github.cdimascio:dotenv-java:3.0.0")
-    implementation("org.openjfx:javafx-controls:22.0.1")
-    implementation("org.openjfx:javafx-media:22.0.1")
-    implementation("com.oracle.database.jdbc:ojdbc8:19.9.0.0")
+    implementation("mysql:mysql-connector-java:8.0.33")
+    implementation("com.github.vladimir-bukhtoyarov:bucket4j-core:7.6.0")
 }
 
 java {

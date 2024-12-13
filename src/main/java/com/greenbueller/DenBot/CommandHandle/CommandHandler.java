@@ -66,29 +66,14 @@ public class CommandHandler extends ListenerAdapter {
         addDescriptions("Gets a list of every role on the server.");
         addDescriptions("Gets a list of roles on the server.");
         addDescriptions("Gets information about a specific role.");
-        addDescriptions("Gets a list of every supported command.");
-        addDescriptions("Gets the runtime of the bot" + System.lineSeparator() + System.lineSeparator() + getModding().getFormatted() +  " **Modding Commands**" + System.lineSeparator());
+        addDescriptions("Gets a list of every supported command." + System.lineSeparator() + System.lineSeparator() + getModding().getFormatted() +  " **Modding Commands**" + System.lineSeparator());
+        //addDescriptions("Gets the runtime of the bot" + System.lineSeparator() + System.lineSeparator() + getModding().getFormatted() +  " **Modding Commands**" + System.lineSeparator());
 
-        addDescriptions("Shows details about the user directory");
-        addDescriptions("Explains common localization errors");
-        addDescriptions("Explains debugging");
-        addDescriptions("Explains uploading mods to the workshop");
-        addDescriptions("Explains the crash data log");
-        addDescriptions("Explains how to search through files");
-        addDescriptions("Explains common reasons for the game crashing on the main menu");
-        addDescriptions("Explains common reasons for game crashing on country select screen");
-        addDescriptions("Explains the client_ping error");
-        addDescriptions("Explains the unexpected token error");
-        addDescriptions("Explains state modding via Nudger");
-        addDescriptions("Explains how Git works");
-        addDescriptions("Explains .mod file errors");
-        addDescriptions("Explains how to fire an event on a specific day");
-        addDescriptions("Shows the Map Modding Flowchart");
-        addDescriptions("Shows the Den Reputation System");
+        addDescriptions("Operates the Den Reputation System");
         addDescriptions("Returns useful advice for modding HOI4."  + System.lineSeparator() + System.lineSeparator() + getAdmin().getFormatted() +  " **Admin Commands**" + System.lineSeparator());
 
-        addDescriptions("Reloads every command");
-        addDescriptions("Forces a specified command to reload");
+        //addDescriptions("Reloads every command");
+        //addDescriptions("Forces a specified command to reload");
 
         // Moderation
 
@@ -124,17 +109,17 @@ public class CommandHandler extends ListenerAdapter {
         commandDataList.add(Commands.slash("roles", descriptionList.get(22)));
         commandDataList.add(Commands.slash("role", descriptionList.get(23)).addOption(OptionType.ROLE, "role", "What role do you want information on?", true));
         commandDataList.add(Commands.slash("guild", descriptionList.get(24)));
-        commandDataList.add(Commands.slash("commands", descriptionList.get(25)));
+        commandDataList.add(Commands.slash("commands", "Gets  list of every supported command."));
         //commandDataList.add(Commands.slash("runtime", "Gets the runtime of the bot"));
 
         // Modding
-        commandDataList.add(Commands.slash("rep", descriptionList.get(42)).addOption(OptionType.USER, "user", "What user are you checking?").addOption(OptionType.STRING, "action", "Are you adding reputation?"));
+        commandDataList.add(Commands.slash("rep", descriptionList.get(26)).addOption(OptionType.USER, "user", "What user are you checking?").addOption(OptionType.STRING, "action", "What action are you doing?"));
         commandDataList.add(Commands.slash("modding", "Returns useful advice for modding HOI4.").addOption(OptionType.STRING, "type", "What command do you want to use?", false));
 
         // Administrator
 
-        commandDataList.add(Commands.slash("reload", descriptionList.get(44)).setDefaultPermissions(DefaultMemberPermissions.enabledFor(getPermissionList().get(2), getPermissionList().get(6))));
-        commandDataList.add(Commands.slash("forcereload", descriptionList.get(45)).setDefaultPermissions(DefaultMemberPermissions.enabledFor(getPermissionList().get(6), getPermissionList().get(2))).addOption(OptionType.STRING, "command", "The command to be reloaded.", true));
+        //commandDataList.add(Commands.slash("reload", descriptionList.get(28)).setDefaultPermissions(DefaultMemberPermissions.enabledFor(getPermissionList().get(2), getPermissionList().get(6))));
+        //commandDataList.add(Commands.slash("forcereload", descriptionList.get(29)).setDefaultPermissions(DefaultMemberPermissions.enabledFor(getPermissionList().get(6), getPermissionList().get(2))).addOption(OptionType.STRING, "command", "The command to be reloaded.", true));
 
         commandListPrim.addAll(commandDataList);
         event.getGuild().updateCommands().addCommands(commandDataList).queue();

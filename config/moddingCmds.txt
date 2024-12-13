@@ -1,0 +1,9 @@
+-- user_directory --
+The user directory is used to store save games, the mods, screenshots (including the ctrl+f11 map), logs (including the error log), crash logs, and other user-specific content. This is stored within the base game's launcher-settings.json file as gameDataPath. By default, these folder locations are used per operating system:
+• Windows: `C:\Users\<Username>\Documents\Paradox Interactive\Hearts of Iron IV` or, if OneDrive is present, `C:\Users\<Username>\OneDrive\Documents\Paradox Interactive\Hearts of Iron IV`
+• Mac OS: `~/Documents/Paradox Interactive/Hearts of Iron IV`
+• Linux: `~/.local/share/Paradox Interactive/Hearts of Iron IV`
+If there are any special characters (Such as diacritics or Cyrillic) in the path to the user directory, it might not load entirely properly and it's better to change via the launcher or the previous launcher settings file directly. This includes the mods being stored there not being loaded properly and the game being unable to open the error log.
+**Notably, the nudge stores its outputs there**, which'll get loaded when opening the base game. These may include the `history/`, `localisation/`, and `map/` folders and their contents, such as `Paradox Interactive/Hearts of Iron IV/history/states`. After generating the files with nudge, dispose of the files as needed by moving them to the mod where they're intended to be or, if inapplicable, deleting them.
+
+-- cmd2 --

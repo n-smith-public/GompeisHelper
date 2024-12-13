@@ -1,4 +1,4 @@
-package com.greenbueller.DenBot;
+ package com.greenbueller.DenBot;
 
 import com.greenbueller.DenBot.CommandHandle.*;
 import com.greenbueller.DenBot.EventHandle.MessageSent;

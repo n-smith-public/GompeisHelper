@@ -1,6 +1,7 @@
 package com.greenbueller.DenBot.CommandHandle;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -28,7 +29,7 @@ public class ModdingCommands extends ListenerAdapter {
 
         if (event.getName().equals("modding")) {
             String userInput = "";
-            userInput = event.getOption("type").getAsString();
+            userInput = event.getOption("type") != null ? event.getOption("type").getAsString() : "";
             switch (userInput) {
                 case "user_directory":
                     EmbedBuilder a = userDirectory();
@@ -120,23 +121,23 @@ public class ModdingCommands extends ListenerAdapter {
                     eb.setTitle("Modding Commands");
                     eb.setDescription("To assist in the development of mods, we have compiled a bunch of helpful tips into a few easy commands. We have commands about common errors, how to do things that are commonly asked, as well as a few other helpful things.\n" +
                             "**List of Commands** \n\n" +
-                            "**type: user_directory | Shows details about the user directory \n" +
-                            "**type: localisation | Explains common localization errors \n" +
-                            "**type: debug | Explains debugging \n" +
-                            "**type: workshop | Explains uploading mods to the workshop \n" +
-                            "**type: crash_data_log | Explains the crash data log \n" +
-                            "**type: search_in_files | Explains how to search through files \n" +
-                            "**type: crash_mainmenu | Explains common reasons for the game crashing on the main menu \n" +
-                            "**type: crash_country | Explains common reasons for game crashing on country select screen \n" +
-                            "**type: client_ping | Explains the client_ping error \n" +
-                            "**type: unexpected_token | Explains the unexpected token error \n" +
-                            "**type: nudge_states | Explains state modding via Nudger \n" +
-                            "**type: githelp | Explains how Git works \n" +
-                            "**type: mod_error | Explains .mod file errors \n" +
-                            "**type: date_event | Explains how to fire an event on a specific day \n" +
-                            "**type: mapmodding | Shows the Map Modding Flowchart \n" +
-                            "**type: hoi4moddingedge | Explains why hoi4modding.com shouldn't be used \n" +
-                            "**type: shine | Shows how to add a shine \n\n" +
+                            "type: user_directory \n Shows details about the user directory \n\n" +
+                            "type: localisation \n Explains common localization errors \n\n" +
+                            "type: debug \n Explains debugging \n\n" +
+                            "type: workshop \n Explains uploading mods to the workshop \n" +
+                            "type: crash_data_log \n Explains the crash data log \n\n" +
+                            "type: search_in_files \n Explains how to search through files \n\n" +
+                            "type: crash_mainmenu \n Explains common reasons for the game crashing on the main menu \n\n" +
+                            "type: crash_country \n Explains common reasons for game crashing on country select screen \n\n" +
+                            "type: client_ping \n Explains the client_ping error \n\n" +
+                            "type: unexpected_token \n Explains the unexpected token error \n\n" +
+                            "type: nudge_states \n Explains state modding via Nudger \n\n" +
+                            "type: githelp \n Explains how Git works \n\n" +
+                            "type: mod_error \n Explains .mod file errors \n\n" +
+                            "type: date_event \n Explains how to fire an event on a specific day \n\n" +
+                            "type: mapmodding \n Shows the Map Modding Flowchart \n\n" +
+                            "type: hoi4moddingedge \n Explains why hoi4modding.com shouldn't be used \n\n" +
+                            "type: shine \n Shows how to add a shine \n\n" +
                             "To view one of these commands, do `/modding type: X` where X is one of the types listed above.");
                     break;
             }

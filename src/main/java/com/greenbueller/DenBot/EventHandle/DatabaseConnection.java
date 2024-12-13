@@ -26,7 +26,7 @@ public class DatabaseConnection {
         }
 
         if (dotenv != null && dotenv.get("PASSWORD") != null) {
-            USERID = dotenv.get("PASSWORD");
+            PASSWORD = dotenv.get("PASSWORD");
         } else {
             PASSWORD = System.getenv("PASSWORD");
             if (PASSWORD == null || PASSWORD.isEmpty()) {
@@ -35,20 +35,20 @@ public class DatabaseConnection {
         }
 
         if (dotenv != null && dotenv.get("CONNECTIONSTRING") != null) {
-            USERID = dotenv.get("CONNECTIONSTRING");
+            CONNECTIONSTRING = dotenv.get("CONNECTIONSTRING");
         } else {
             CONNECTIONSTRING = System.getenv("CONNECTIONSTRING");
             if (CONNECTIONSTRING == null || CONNECTIONSTRING.isEmpty()) {
-                throw new IllegalArgumentException("Database ConnectionString not found in environment variables or .env file");
+                CONNECTIONSTRING = "jdbc:mysql://localhost:3306/reputation?useSSL=false";
             }
         }
 
         // Establish the Oracle Driver
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         }
         catch (ClassNotFoundException e) {
-            System.out.println("Unable to find Oracle Driver. See the following error: " + e);
+            System.out.println("Unable to find MySQL Driver. See the following error: " + e);
             return null;
         }
 
